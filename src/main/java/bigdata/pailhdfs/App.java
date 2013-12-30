@@ -23,7 +23,7 @@ public class App extends Configured implements Tool
     {
         Map<String, Object> options = new HashMap<>();
         options.put(SequenceFileFormat.CODEC_ARG,
-            SequenceFileFormat.CODEC_ARG_GZIP);
+            SequenceFileFormat.CODEC_ARG_BZIP2);
         options.put(SequenceFileFormat.TYPE_ARG,
             SequenceFileFormat.TYPE_ARG_BLOCK);
         PailTap.PailTapOptions opts = new PailTap.PailTapOptions();
@@ -63,9 +63,7 @@ public class App extends Configured implements Tool
     public static void main( String[] args )
     {
         Configuration conf = new Configuration();
-        //String files = args[1] + "," + args[2] + "," + args[3];
-        //conf.set( "mapred.cache.files", files ); // stopwords
-        conf.set( "mapred.reduce.tasks", "20" );
+        conf.set( "mapred.reduce.tasks", "28" );
         conf.set( "mapred.child.java.opts", "-Xmx2g" );
         
         try 

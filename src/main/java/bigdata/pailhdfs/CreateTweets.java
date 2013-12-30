@@ -46,6 +46,10 @@ public class CreateTweets extends CascalogFunction
             try
             {
                 tTweet.getLanguage().setGetLang( jTweet.getIsoLanguageCode() );
+                tTweet.getLocation().setLatitude( jTweet.getGeoLocation()
+                        .getLatitude() );
+                tTweet.getLocation().setLongitude( jTweet.getGeoLocation()
+                        .getLongitude() );
             }
             catch( NullPointerException e ) {}
             
